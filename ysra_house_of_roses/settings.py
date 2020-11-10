@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'ysra_house_of_flowers.urls'
+ROOT_URLCONF = 'ysra_house_of_roses.urls'
 
 TEMPLATES = [
     {
@@ -98,7 +98,7 @@ ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
 
-WSGI_APPLICATION = 'ysra_house_of_flowers.wsgi.application'
+WSGI_APPLICATION = 'ysra_house_of_roses.wsgi.application'
 
 
 # Database
