@@ -1,11 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html {
-height: 100%;
+     /* Sizing */
+    height: 100%;
 }
 
 body {
     margin: 0;
+}
+
+#logo {
+  height: 100px;
+  margin-left: 70px;
+}
+
+
+.nav-link,.nav-link-header,.dropdown-item,.icon-search{
+    color: #f1777e !important;
+}
+
+.nav-link-header{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+}
+
+.nav-link-header:hover,.nav-link:hover{
+    color: #c8cbd8 !important;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
 }
 
 
@@ -36,11 +60,11 @@ body {
 .hero h1 {
     /* Text styles */
     font-size: 5em;
-    /*font-family: Lato;*/
+    font-family:'Roboto', sans-serif;
     font-weight: 50px;
 
      /* Margins */
-    margin-top: 0;
+    margin-top: 150px;
     margin-bottom: 0.5em;
     
 }
@@ -65,10 +89,38 @@ body {
     border-radius: 20px;
 }
 
-.bg-black {
-    background: #000 !important;
+.utility-nav {
+  background: #e4e4e4;
+  padding: 0.5rem 1rem;
+  margin-left: 1px
 }
 
-.box{
-    margin: 0 auto;
+.utility-nav p {
+  margin-bottom: 0;
 }
+
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+

@@ -1,0 +1,23 @@
+<li class="list-inline-item">
+    <a class="nav-link main-logo-link d-block d-lg-none" href="{% url 'home' %}" >
+        <img src="" class="brand-logo" alt="House of Roses" >
+    </a>
+</li>
+
+
+<li class="list-inline-item">
+    <a href="#" class="nav-link-header btn btn-large px-1 py-2 d-block d-md-none {% if grand_total %}text-warning {% endif %}">
+        <div class="text-center {% if grand_total %}text-warning {% endif %}">
+            <div><i class="fas fa-shopping-cart"></i></div>
+                <small>
+                {% if grand_total %}
+                    <span class="font-weight-bold"> €{{ grand_total|floatformat:2 }} </span>
+                {% else %}
+                    €0.00
+                {% endif %}
+                </small>
+            </div>
+    </a> 
+</li>
+          
+
