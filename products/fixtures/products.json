@@ -1,0 +1,236 @@
+[
+   {
+      "pk":1,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12345",
+         "name":"White Ecudorian Rose",
+         "description":"24 pieces fresh White Ecuadorian Rose in a black Bouquet ",
+         "price":150,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-white-ecuadorian.jpg"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12346",
+         "name":"Lovely Yellow Ecuadorian Rose",
+         "description":"9 pieces Premium Preserve Ecuadorian rose in Mirror Box",
+         "price":110,
+         "category":4,
+         "image_url":"",
+         "image":"lovely-yellow-mirror-cube.jpg"
+      }
+   },
+   {
+      "pk":3,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12347",
+         "name":"Classic Red Ecuadorian Rose",
+         "description":"12 pieces Red Ecuadorian Roses in Black Cylinder",
+         "price":80,
+         "category":2,
+         "image_url":"",
+         "image":"classic-cylinder.jpg"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12348",
+         "name":"Premium Pink Sweetheart",
+         "description":"14 pieces Pink Ecuadorian Roses in white heart shape ",
+         "price":90,
+         "category":3,
+         "image_url":"",
+         "image":"premium-sweetheart.jpg"
+      }
+   },
+   {
+      "pk":5,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12349",
+         "name":"Amelia",
+         "description":"8 pieces Pink Ecuadorian Roses with Lisanthius in a cream Bouquet",
+         "price":90,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-amelie.jpg"
+      }
+   },
+   {
+      "pk":6,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12310",
+         "name":"Classic Sweetheart",
+         "description":"14 pieces Red and Pink Ecuadorian Roses in white heart shape",
+         "price":90,
+         "category":4,
+         "image_url":"",
+         "image":"classic-sweetheart.jpg"
+      }
+   },
+   {
+      "pk":7,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12311",
+         "name":"Monochromatic Pink Roses",
+         "description":"18 pieces Ecuadorian Roses Pink Color in a Pastel Pink Bouquet",
+         "price":155,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-monochromatic-pink.jpg"
+      }
+   },
+   {
+      "pk":8,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12312",
+         "name":" Lovely White Ecuadorian Roses",
+         "description":"12 pieces Ecuadorian White Roses in Pink Pastel cylinder",
+         "price":85,
+         "category":2,
+         "image_url":"",
+         "image":"pastel-pink-white-ecuadorian.jpg"
+      }
+   },
+   {
+      "pk":9,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12313",
+         "name":"Black Ecuadorian Rose Bouquet",
+         "description":"50 pieces Lovely Black Ecuadorian Rose in a Grey Bouquet",
+         "price":280,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-black-ecuadorian.jpg"
+      }
+   },
+   {
+      "pk":10,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12314",
+         "name":"Assorted Mirror Cube Roses",
+         "description":"9 pieces Premium Preserve Ecuadorian rose in Mirror Box",
+         "price":110,
+         "category":4,
+         "image_url":"",
+         "image":"mirror-assorted.jpg"
+      }
+   },
+   {
+      "pk":11,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12315",
+         "name":"Make it Chick",
+         "description":"12 pieces Black Ecuadorian Roses in White Cylinder ",
+         "price":80,
+         "category":2,
+         "image_url":"",
+         "image":"make-it-chick cylinder.jpg"
+      }
+   },
+   {
+      "pk":12,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12316",
+         "name":"Classic Red in the Box",
+         "description":"9 pieces preserved red roses in mirror box",
+         "price":110,
+         "category":4,
+         "image_url":"",
+         "image":"classic-mirror-cube.jpg"
+      }
+   },
+   {
+      "pk":13,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12317",
+         "name":"Dainty Pink Ecuadorian Roses",
+         "description":"12 pieces Pink Ecuadorian Roses in Black Cylinder",
+         "price":80,
+         "category":2,
+         "image_url":"",
+         "image":"cylinder-dainty-pink.jpg"
+      }
+   },
+   {
+      "pk":14,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12318",
+         "name":"Strawberry Cream Swirl Roses",
+         "description":"12 pieces Ecuadorian Roses in black bouquet",
+         "price":180,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-strawberry-cream-swirls.jpg"
+      }
+   },
+   {
+      "pk":15,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12319",
+         "name":"Pure White",
+         "description":"12 pieces of White Ecuadorian Roses in a White Cylinder",
+         "price":80,
+         "category":2,
+         "image_url":"",
+         "image":"cylinder-white-white.jpg"
+      }
+   },
+   {
+      "pk":16,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12320",
+         "name":"Lovely Yellow in Black",
+         "description":"12 pieces of Yellow Ecuadorian Roses in a Black Cylinder",
+         "price":80,
+         "category":2,
+         "image_url":"",
+         "image":"lovely-yellow-cylinder.jpg"
+      }
+   },
+   {
+      "pk":17,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12321",
+         "name":"Red Primavera",
+         "description":"Primavera bouquet is a mix of varying size of 18 eatern roses and 18 local rosesto give the arrangement a cascading illusion",
+         "price":200,
+         "category":1,
+         "image_url":"",
+         "image":"bouquet-primavera.jpg"
+      }
+   },
+   {
+      "pk":18,
+      "model":"products.product",
+      "fields":{
+         "sku":"YHR12322",
+         "name":"Peachy Sweetheart",
+         "description":"14 pieces of peach ecuadorian roses in a heart shape container",
+         "price":90,
+         "category":3,
+         "image_url":"",
+         "image":"peachy-sweetheart.jpg"
+      }
+   }
+]

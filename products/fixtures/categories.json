@@ -1,0 +1,34 @@
+[
+   {
+      "pk":1,
+      "model":"products.category",
+      "fields":{
+         "name":"Bouquet",
+         "friendly_name":"Bouquet"
+      }
+   },
+   {
+      "pk":2,
+      "model":"products.category",
+      "fields":{
+         "name":"Cylinder",
+         "friendly_name":"Cylinder"
+      }
+   },
+   {
+      "pk":3,
+      "model":"products.category",
+      "fields":{
+         "name":"Heart",
+         "friendly_name":"Heart"
+      }
+   },
+   {
+      "pk":4,
+      "model":"products.category",
+      "fields":{
+         "name":"Mirror box",
+         "friendly_name":"Mirror box"
+      }
+   }
+]
