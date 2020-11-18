@@ -90,7 +90,7 @@ body {
 }
 
 .utility-nav {
-  background: #e4e4e4;
+  background: #f1777e;
   padding: 0.5rem 1rem;
   margin-left: 1px
 }
@@ -99,6 +99,20 @@ body {
   margin-bottom: 0;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+.product-img{
+height: 20.6rem;
+object-fit: cover;
+}
 
 /* -------------------------------- Media Queries */
 
@@ -124,3 +138,8 @@ body {
     }
 }
 
+@media only screen and (max-width: 992px){
+    #logo{
+        margin-left: 10px;
+    }
+}

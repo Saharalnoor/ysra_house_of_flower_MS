@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="overlay"></div>
+     <div class="container mt-4 mb-5">
+        <div class="row">
+            <div class="col text-center push-down">
+                <h1>Products</h1>
+                <hr>
+            </div>
+    <div class="row">
+     {% for product in products %}
+    <div class="col-sm-12 col-md-6 col-lg-4 text-center mt-5">     
+            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
+            <div class="card-product product mb-5">
+                <h6 class="product-heading mt-3"><strong>{{product.name}}</strong></h6>
+            <hr>
+            <div class="mb-3 d-flex justify-content-around align-items-baseline">
+                <button class="btn btn-outline-danger add-btn">Add to Cart</button>
+            <a class="btn btn-outline-success" href="#">View Details</a>
+            </div>
+        </div>
+            </div>
+        {% endfor %}
+        </div>
+{% endblock %}
