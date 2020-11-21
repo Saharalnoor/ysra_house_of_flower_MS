@@ -24,10 +24,10 @@
                Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Bouquet</a>
-                <a href="" class="dropdown-item ">Cylinder</a>
-                <a href="" class="dropdown-item ">Heart</a>
-                <a href="" class="dropdown-item">Mirror Box</a>
+                <a href="{% url 'products' %}?category=bouquet" class="dropdown-item">Bouquet</a>
+                <a href="{% url 'products' %}?category=cylinder" class="dropdown-item ">Cylinder</a>
+                <a href="{% url 'products' %}?category=heart" class="dropdown-item ">Heart</a>
+                <a href="{% url 'products' %}?category=mirror-box" class="dropdown-item">Mirror Box</a>
             </div>
         </li>
 

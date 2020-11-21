@@ -34,20 +34,8 @@
     <title>Ysra House of Roses {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-        <header class="container-fluid fixed-top">
-            <div class="utility-nav d-none d-md-block">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12 col-md-6">
-                            <p class="small"><i class="bx bx-envelope"></i> ysrahouseofroses@google.com | <i class="bx bx-phone"></i> +46753933066 </p>
-                        </div>
-                        <div class="col-12 col-md-6 text-right">
-                            <p class="small">Free delivery on orders over ${{ free_delivery_threshold }}!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+        <header class="container-fluid sticky-top">
+          <div id="topnav " class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
                       <img id="logo" src="{% static 'img/yhr-logo.png' %}" alt="House of Roses" > </a>
@@ -115,7 +103,6 @@
             </nav>
         </div>
     </header>
-    
 
     {% block page_header %}
     {% endblock %}
@@ -126,6 +113,5 @@
     {% block postloadjs %}
     {% endblock %}
 
-    
   </body>
 </html>
