@@ -110,11 +110,18 @@ body {
     object-fit: cover;
 }
 
+.main-heading-roses,
 .products-title{
     font-family: 'Roboto', sans-serif;  
     color: #f1777e;
+    font-weight: 900;
+
 }
-.category-tag,.category-label,.description-header,.quantity-header{
+
+.category-tag,
+.category-label,
+.description-header,
+.quantity-header{
     color: #f1777e;
     font-size: 1.3em;
 }
