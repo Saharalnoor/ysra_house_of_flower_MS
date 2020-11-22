@@ -2,26 +2,56 @@
 {% load static %}
 
 {% block page_header %}
+<hr>
     <div class="overlay"></div>
-     <div class="container mt-4 mb-5">
-        <div class="row">
-            <div class="col text-center push-down">
-                <h1>Products</h1>
-                <hr>
+        <div class="container mt-4 mb-5">
+            <div class="row">
+                <div class="col-12 text-center mt-2">
+                    <h1 class="products-title font-weight-bold">{{ product.name }}</h1>
+                </div>
             </div>
-    <div class="row">
-     {% for product in products %}
-    <div class="col-sm-12 col-md-6 col-lg-4 text-center mt-5">     
-            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
-            <div class="card-product product mb-5">
-                <h6 class="product-heading mt-3"><strong>{{product.name}}</strong></h6>
-            <hr>
-            <div class="mb-3 d-flex justify-content-around align-items-baseline">
-                <button class="btn btn-outline-danger add-btn">Add to Cart</button>
-            <a class="btn btn-outline-success" href="#">View Details</a>
+            <div class="row">
+               <div class="col-12 col-md-6 center-align">
+                    <div class="image-container my-5">
+                        {% if product.image %}
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="product-img-top img-fluid responsive-img z-depth-2" src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+                        {% else %}
+                        <a href="">
+                            <img class="product-img-top img-fluid responsive-img z-depth-2" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="details-container my-5">
+                         <i class="fas fa-tag category-tag mr-2 mb-4"></i>
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" 
+                       class="category-label font-weight-bold">
+                        {{ product.category.friendly_name }}
+                    </a>
+                        <p class="price-sign mb-4"><i class="fas fa-euro-sign font-weight-bold mr-1"></i>{{ product.price }}</p>
+                        <p class="description-header lead font-weight-bold">Description</p>
+                        <p class="product-description pt-1">{{ product.description }}</p>    
+                    </div>
+                    <form action="action" method="GET" class="form-container">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-7 col-md-6">
+                            <div class="input-group d-flex align-items-center mb-5">
+                                <span class="quantity-header font-weight-bold mr-2">Quantity:</span>
+                                <div class="w-30">
+                                    <input name="quantity" type="number" min="1" max="999" class="form-control" value="1" required>
+                                </div>
+                            </div>
+                            <div class="mt-4 mb-2 text-center text-md-left">
+                                <a href="{% url 'products' %}" class="btn btn-outline-danger btn-md mr-1 mb-2">Keep Shopping </a>
+                                <input type="submit" class="btn btn-outline-success btn-md mr-1 mb-2" value="Add to Cart">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                </div>
             </div>
-        </div>
-            </div>
-        {% endfor %}
-        </div>
+        </div>           
 {% endblock %}

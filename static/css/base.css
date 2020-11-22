@@ -24,7 +24,7 @@ body {
 }
 
 .nav-link-header:hover,.nav-link:hover{
-    color: #c8cbd8 !important;
+    color: #c5cbe6 !important;
     transition: all 0.35s ease-in-out;
     -moz-transition: all 0.35s ease-in-out;
     -webkit-transition: all 0.35s ease-in-out;
@@ -32,53 +32,41 @@ body {
 }
 
 .hero{
-
-   /* Sizing */
     width: 100vw;
     height: 100vh;
     
-    /* Flexbox stuff */
     display: flex;
     justify-content: center;
     align-items: center;
     
-    
-    /* Background styles */
     background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../../media/hero-image.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    /* Text styles */
     text-align: center;
     color: #ffff;
 }
 
 .hero h1 {
-    /* Text styles */
     font-size: 5em;
     font-family:'Roboto', sans-serif;
     font-weight: 50px;
-    
 }
 
 .hero .btn {
-    /* Positioning and sizing */
     display: block;
     width: 200px;
     
-    /* margins */
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     
-    /* Text styles */
     color: white; 
     text-decoration: none;
     font-size: 1.5em;
-    
-    /* Border styles */
+
     border: 3px solid white; 
     border-radius: 20px;
 }
@@ -88,8 +76,13 @@ body {
     border-color: #ffff;
 }
 .btn-search {
-     background-color: #f1777e;
+    background-color: #f1777e;
     border-color: #000;
+}
+
+.btn-md{
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .utility-nav {
@@ -113,12 +106,31 @@ body {
 }
 
 .product-img{
-height: 20.6rem;
-object-fit: cover;
+    height: 20.6rem;
+    object-fit: cover;
+}
+
+.products-title{
+    font-family: 'Roboto', sans-serif;  
+    color: #f1777e;
+}
+.category-tag,.category-label,.description-header,.quantity-header{
+    color: #f1777e;
+    font-size: 1.3em;
+}
+
+.price-sign{ 
+    font-weight: 500;
+    font-size: 1.4rem;
+    color: #252021;
 }
 
 
-
+.product-description{
+    font-size: 1.1em;
+    font-family: 'Roboto', sans-serif; 
+    font-style: italic;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
