@@ -15,24 +15,28 @@
      <div class="container mb-5">
         <div class="row">
             <div class="col text-center mt-5">
-                <h1 class="main-heading-roses">Roses</h1>
+                <h1 class="main-heading-roses">ROSES</h1>
+                <hr class="horizontal-lines">
+                {% for c in current_categories %}
+                        <span class="p-2 mt-2 badge badge-white category-header">{{ c.friendly_name }}</span>
+                {% endfor %}
                 <hr>
             </div>
-    <div class="row">
-     {% for product in products %}
-    <div class="col-sm-12 col-md-6 col-lg-4 text-center mt-5"> 
-            <a href="{% url 'product_details' product.id %}">    
-            <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
-            </a>
-            <div class="card-product product mb-5">
-                <h6 class="product-heading mt-3">{{product.name}}</h6>
-            <hr>
-            <div class="mb-3 d-flex justify-content-around align-items-baseline">
-                <button class="btn btn-outline-danger add-btn">Add to Cart</button>
-            <a class="btn btn-outline-success" href="{% url 'product_details' product.id %}">View Details</a>
-            </div>
-        </div>
-            </div>
-        {% endfor %}
-        </div>
+            <div class="row">
+            {% for product in products %}
+            <div class="col-sm-12 col-md-6 col-lg-4 text-center mt-5"> 
+                    <a href="{% url 'product_details' product.id %}">    
+                    <img class="card-img-top product-img img-fluid rounded-lg shadow-sm" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    </a>
+                    <div class="card-product product mb-5">
+                        <h6 class="product-heading mt-3">{{product.name}}</h6>
+                    <hr>
+                    <div class="mb-3 d-flex justify-content-around align-items-baseline">
+                        <button class="btn btn-outline-danger add-btn">Add to Cart</button>
+                    <a class="btn btn-outline-success" href="{% url 'product_details' product.id %}">View Details</a>
+                    </div>
+                </div>
+                    </div>
+                {% endfor %}
+                </div>
 {% endblock %}

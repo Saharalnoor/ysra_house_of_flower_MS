@@ -122,7 +122,14 @@ body {
     font-family: 'Roboto', sans-serif;  
     color: #f1777e;
     font-weight: 900;
+    font-size: 2.1em;
+}
 
+.category-header{
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 900;
+    font-size: 1.5em;
+    color: #c23940;
 }
 
 .category-tag,
@@ -139,12 +146,25 @@ body {
     color: #252021;
 }
 
-
 .product-description{
     font-size: 1.1em;
     font-family: 'Roboto', sans-serif; 
     font-style: italic;
 }
+
+.horizontal-lines {
+  height: 10px;
+  color: rgb(212, 14, 80);
+  background-image: linear-gradient(
+    currentColor,
+    currentColor 33.33%,
+    transparent 33.33%,
+    transparent 100%);
+  background-size: 100% 3px;
+  width: 40px;
+}
+
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
