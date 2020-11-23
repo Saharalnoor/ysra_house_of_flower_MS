@@ -24,26 +24,26 @@
                Categories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?category=bouquet" class="dropdown-item">Bouquet</a>
-                <a href="{% url 'products' %}?category=cylinder" class="dropdown-item ">Cylinder</a>
-                <a href="{% url 'products' %}?category=heart" class="dropdown-item ">Heart</a>
-                <a href="{% url 'products' %}?category=mirror-box" class="dropdown-item">Mirror Box</a>
+                <a href="{% url 'products' %}?category=Bouquet" class="dropdown-item">Bouquet</a>
+                <a href="{% url 'products' %}?category=Cylinder" class="dropdown-item ">Cylinder</a>
+                <a href="{% url 'products' %}?category=Heart" class="dropdown-item ">Heart</a>
+                <a href="{% url 'products' %}?category=Mirror box" class="dropdown-item">Mirror Box</a>
             </div>
         </li>
 
         <li class="nav-item nav-item-header mr-5">
-            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/services/' %}active-nav-link{% endif %}" 
+            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
                  href="">About
             </a>
         </li>
         <li class="nav-item nav-item-header mr-5">
-            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/services/' %}active-nav-link{% endif %}" 
+            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
                  href="">FAQs
             </a>
         </li>
 
         <li class="nav-item nav-item-header mr-5">
-            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/services/' %}active-nav-link{% endif %}" 
+            <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
                  href="">Contact Us
             </a>
         </li>
