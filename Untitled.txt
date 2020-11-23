@@ -1,0 +1,24 @@
+ if request.GET:
+
+        if 'category' in request.GET:
+
+            categories = request.GET['category'].split(',')
+
+            products = products.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
+        if 'search_term_input' in request.GET:
+            query = request.GET['serach_term_input']
+            if not query:
+                messages.error(request,
+                               "No search results were found.")
+                return redirect(reverse('products'))
+
+            search_queries = Q(name__icontains=query) | \
+                Q(description__icontains=query)
+            products = products.filter(search_queries)
+
+    context = {
+        'products': products,
+        'search_word': query,
+    }
