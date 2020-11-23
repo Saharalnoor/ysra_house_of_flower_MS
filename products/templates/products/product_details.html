@@ -44,7 +44,8 @@
                         <p class="description-header lead font-weight-bold">Description</p>
                         <p class="product-description pt-1">{{ product.description }}</p>    
                     </div>
-                    <form action="action" method="GET" class="form-container">
+                    <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
                     <div class="row d-flex justify-content-between">
                         <div class="col-7 col-md-6">
                             <div class="input-group d-flex align-items-center mb-5">
@@ -57,6 +58,7 @@
                                 <a href="{% url 'products' %}" class="btn btn-outline-danger btn-md mr-1 mb-2">Keep Shopping </a>
                                 <input type="submit" class="btn btn-outline-success btn-md mr-1 mb-2" value="Add to Cart">
                             </div>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </div>
                 </form>
