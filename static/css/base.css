@@ -165,6 +165,38 @@ body {
 }
 
 
+.card {
+    margin-bottom: 30px;
+    border: 0;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    letter-spacing: .5px;
+    border-radius: 8px;
+    -webkit-box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05);
+    box-shadow: 1px 5px 24px 0 rgba(68, 102, 242, .05)
+}
+
+.card-header:first-child {
+    border-radius: calc(.25rem - 1px) calc(.25rem - 1px) 0 0
+}
+
+.card .card-body {
+    padding: 30px;
+}
+
+.main-content{
+    font-size: 2rem
+}
+.sub-content{
+    font-size: .90rem
+}
+.btn-primary,
+.btn-primary.disabled,
+.btn-primary:disabled {
+    background-color: #f1777e !important;
+    border-color: #f1777e !important
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

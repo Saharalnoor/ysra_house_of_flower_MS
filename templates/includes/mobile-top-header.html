@@ -6,7 +6,7 @@
 
 
 <li class="list-inline-item">
-    <a href="#" class="nav-link-header btn btn-large px-1 py-2 d-block d-md-none {% if grand_total %}text-warning {% endif %}">
+    <a href="{% url 'view_cart' %}" class="nav-link-header btn btn-large px-1 py-2 d-block d-md-none {% if grand_total %}text-warning {% endif %}">
         <div class="text-center {% if grand_total %}text-warning {% endif %}">
             <div><i class="fas fa-shopping-cart"></i></div>
                 <small>
