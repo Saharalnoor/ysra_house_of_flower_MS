@@ -12,21 +12,76 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid mt-5">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="card-body cart">
                     {% if cart_items %}
-                    <div class="table-responsive rounded">
-                    {{ cart_items }}
-                    </div>
-                    {% else %}
-                    <div class="col-sm-12 empty-cart-cls text-center"> <img id="empty-cart" src="{% static 'img/empty-cart.png' %}" width="250" height="250" class="img-fluid mb-4 mr-3">
-                            <h3 class="main-content mb-3 mt-4"><strong>Your Cart is Empty</strong></h3>
-                            <h4 class="sub-content">You have not added any items to the shopping cart yet.</h4> <a href="{% url 'products' %}" class="btn btn-primary cart-btn-transform mt-5" data-abc="true"><i class="fas fa-long-arrow-alt-left"></i> Continue shopping</a>   
+                     <div class="cart_section">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-10 offset-lg-1">
+                                <div class="cart_container">
+                                    <div class="cart_title mb-5">Your Shopping Cart</div>
+                                    {% for item in cart_items %}
+                                    <div class="cart_items">
+                                        <ul class="cart_list">
+                                            <li class="cart_item clearfix">
+                                                <div class="cart_item_image"><img class="img-fluid rounded-lg img-cart" src="{{ item.product.image.url }}" alt="{{ item.product.name }}"></div>
+                                                <div class="cart_item_info d-flex flex-md-row flex-column justify-content-between">
+                                                    <div class="cart_item_name cart_info_col">
+                                                        <div class="cart_item_title">Name</div>
+                                                        <div class="cart_item_text">{{ item.product.name }}</div>
+                                                    </div>
+                                                    <div class="cart_item_sku cart_info_col">
+                                                        <div class="cart_item_title">SKU</div>
+                                                        <div class="cart_item_text">{{ item.product.sku|upper }}</div>
+                                                    </div>
+                                                    <div class="cart_item_quantity cart_info_col">
+                                                        <div class="cart_item_title">Quantity</div>
+                                                        <div class="cart_item_text"><input name="quantity" type="number" min="1" max="999" class="form-control"
+                                                            value="{{ item.quantity }}"  required></div>
+                                                    </div>
+                                                    <div class="cart_item_price cart_info_col">
+                                                        <div class="cart_item_title">Price</div>
+                                                        <div class="cart_item_text">${{ item.product.price }}</div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    {% endfor %}
+                                    <div class="order_total">
+                                        <div class="order_total_content text-md-right">
+                                            <div class="order_subtotal_title">Subtotal:</div>
+                                            <div class="order_subtotal_amount"> ${{ grand_total|floatformat:2 }}</div>
+                                        </div>
+                                         <div class="order_total_content text-md-right">
+                                            <div class="delivery_title">Delivery:</div>
+                                            <div class="delivery_total_amount"> ${{ delivery|floatformat:2 }}</div> 
+                                        </div>
+                                        <div class="order_total_content text-md-right">
+                                            <div class="order_grandtotal_title">Grand Total:</div>
+                                            <div class="order_grandtotal_amount"> ${{ grand_total|floatformat:2 }}</div>
+                                            {% if free_delivery_delta > 0 %}
+                                            <p class="mb-1 text-danger">
+                                                Free delivery over <strong>${{ free_delivery_delta }}</strong> more!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="cart_buttons"> <a href="{% url 'products' %}" button type="button" class="button cart_button_clear">Keep Shopping</a> <button type="button" class="button cart_button_checkout icon"><i class="fas fa-lock"></i>  Secure Checkout</button> </div>
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="col-sm-12 empty-cart-cls text-center"> <img id="empty-cart" src="{% static 'img/empty-cart.png' %}" width="250" height="250" class="img-fluid mb-4 mr-3">
+                                    <h3 class="main-content mb-3 mt-4"><strong>Your Cart is Empty</strong></h3>
+                                    <h4 class="sub-content">You have not added any items to the shopping cart yet.</h4> <a href="{% url 'products' %}" class="btn btn-primary cart-btn-transform mt-5" data-abc="true"><i class="fas fa-long-arrow-alt-left"></i> Continue shopping</a>   
+                                </div>
+                            </div>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
-                {% endif %}
             </div>
-  
+        </div>
 {% endblock %}
