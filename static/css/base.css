@@ -131,6 +131,9 @@ body {
     font-size: 1.5em;
     color: #c23940;
 }
+.category-label a :hover{
+    color:#c5cbe6 !important;
+}
 
 .category-tag,
 .category-label,
@@ -412,6 +415,3 @@ ul {
     }
 }
 
-@media (min-width:320px)  {
-    
-}

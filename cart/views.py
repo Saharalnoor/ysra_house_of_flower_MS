@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
+from products.models import Product
+from django.contrib import messages
 
 # Create your views here.
 
@@ -23,3 +25,31 @@ def add_to_cart(request, item_id):
 
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def update_cart(request, item_id):
+    """Update the quantity of the selected product/service in the cart
+        to the specified amount"""
+
+    quantity = int(request.POST.get('quantity'))
+    product = Product.objects.get(pk=item_id)
+    cart = request.session.get('cart', {})
+    datetime = None
+    if 'datetime' in request.POST:
+        datetime = request.POST['datetime']
+    if datetime:
+        if quantity > 0:
+            cart[item_id] = {'items_by_datetime': {datetime: quantity}}
+            messages.success(request,
+                             (f'Successfully Updated {product.name}'))
+
+    else:
+        if quantity > 0:
+            cart[item_id] = quantity
+            messages.success(request, f'Updated {product.name}\
+                quantity to {cart[item_id]}')
+        else:
+            cart.pop(item_id)
+
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
