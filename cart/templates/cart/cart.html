@@ -42,7 +42,8 @@
                                                         <div class="cart_item_title">Quantity</div>
                                                         <div class="cart_item_text"><input name="quantity" type="number" min="1" max="999" class="form-control"
                                                             value="{{ item.quantity }}"  required></div>
-                                                            <button type="submit" class="btn btn-primary mt-3">Update</button>
+                                                            <button type="submit" class="btn btn-success mt-3">Update</button>
+                                                            <button type="submit" class="btn remove-item btn-danger mt-3" id="remove_{{ item.item_id }}">Remove</button>
                                                         </form>
                                                     </div>
                                                     <div class="cart_item_price cart_info_col">
@@ -88,5 +89,24 @@
                 </div>
             </div>
         </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    //Remove item and reload cart
+    $(".remove-item").click(function (e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr("id").split("remove_")[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {
+            "csrfmiddlewaretoken": csrfToken
+        };
+        $.post(url, data)
+            .done(function () {
+                location.reload();
+            });
+    });
+</script>
 {% endblock %}
 
