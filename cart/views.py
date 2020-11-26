@@ -15,6 +15,7 @@ def view_cart(request):
 def add_to_cart(request, item_id):
     """ Add a quantity of the selected product/service to the cart """
 
+    product = Product.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     cart = request.session.get('cart', {})
@@ -23,6 +24,7 @@ def add_to_cart(request, item_id):
         cart[item_id] += quantity
     else:
         cart[item_id] = quantity
+        messages.success(request, f'{product.name} was added to your cart')
 
     request.session['cart'] = cart
     return redirect(redirect_url)
@@ -35,22 +37,13 @@ def update_cart(request, item_id):
     quantity = int(request.POST.get('quantity'))
     product = Product.objects.get(pk=item_id)
     cart = request.session.get('cart', {})
-    datetime = None
-    if 'datetime' in request.POST:
-        datetime = request.POST['datetime']
-    if datetime:
-        if quantity > 0:
-            cart[item_id] = {'items_by_datetime': {datetime: quantity}}
-            messages.success(request,
-                             (f'Successfully Updated {product.name}'))
 
-    else:
-        if quantity > 0:
-            cart[item_id] = quantity
-            messages.success(request, f'Updated {product.name}\
+    if quantity > 0:
+        cart[item_id] = quantity
+        messages.success(request, f'Updated {product.name}\
                 quantity to {cart[item_id]}')
-        else:
-            cart.pop(item_id)
+    else:
+        cart.pop(item_id)
 
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
