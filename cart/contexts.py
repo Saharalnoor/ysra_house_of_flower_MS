@@ -11,6 +11,7 @@ def cart_contents(request):
     total = 0
     items_count = 0
     cart = request.session.get('cart', {})
+    print(cart)
 
     for item_id, item_data in cart.items():
         product = get_object_or_404(Product, pk=item_id)
@@ -40,5 +41,8 @@ def cart_contents(request):
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'delivery': delivery,
     }
+
+    print(context)
+    print(cart_items)
 
     return context

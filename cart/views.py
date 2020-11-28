@@ -8,8 +8,18 @@ from django.contrib import messages
 
 def view_cart(request):
     """ A view that renders the cart contents page """
+    cart = request.session.get('cart', {})
+   
+    print("\n\n")
+    print(cart)
+    print("\n\n")
+    return
+    template = 'cart/cart.html'
+    context = {
+            'cart_items': cart
+        }
 
-    return render(request, 'cart/cart.html')
+    return render(request, template, context)
 
 
 def add_to_cart(request, item_id):

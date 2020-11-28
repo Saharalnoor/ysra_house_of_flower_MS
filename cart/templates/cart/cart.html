@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
+
 
 {% block content %}
     <div class="overlay"></div>
@@ -37,7 +39,7 @@
                                                         <div class="cart_item_text">{{ item.product.sku|upper }}</div>
                                                     </div>
                                                     <div class="cart_item_quantity cart_info_col">
-                                                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+                                                        <form class="form update-form" method="POST" >
                                                         {% csrf_token %}
                                                         <div class="cart_item_title">Quantity</div>
                                                         <div class="cart_item_text"><input name="quantity" type="number" min="1" max="999" class="form-control"
@@ -58,7 +60,7 @@
                                     <div class="order_total">
                                         <div class="order_total_content text-md-right">
                                             <div class="order_subtotal_title">Subtotal:</div>
-                                            <div class="order_subtotal_amount"> ${{ grand_total|floatformat:2 }}</div>
+                                            <div class="order_subtotal_amount"> ${{ item.product.price | calc_subtotal:item.quantity }}
                                         </div>
                                          <div class="order_total_content text-md-right">
                                             <div class="delivery_title">Delivery:</div>
@@ -74,7 +76,8 @@
                                         </div>
                                     </div>
                                     {% endif %}
-                                    <div class="cart_buttons"> <a href="{% url 'products' %}" button type="button" class="button cart_button_clear">Keep Shopping</a> <button type="button" class="button cart_button_checkout icon"><i class="fas fa-lock"></i>  Secure Checkout</button> </div>
+                                    <div class="cart_buttons"> <a href="{% url 'products' %}" button type="button" class="button cart_button_clear">Keep Shopping</a> 
+                                   <a href="{% url 'checkout' %}" button type="button" class="button cart_button_checkout icon"><i class="fas fa-lock"></i>  Secure Checkout </a></div>
                                 </div>
                             </div>
                             {% else %}
@@ -117,4 +120,3 @@
     });
 </script>
 {% endblock %}
-
