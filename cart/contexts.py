@@ -42,7 +42,4 @@ def cart_contents(request):
         'delivery': delivery,
     }
 
-    print(context)
-    print(cart_items)
-
     return context

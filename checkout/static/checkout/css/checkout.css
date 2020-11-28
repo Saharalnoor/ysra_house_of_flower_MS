@@ -1,0 +1,22 @@
+#payment-form .form-control,
+#card-element {
+    color: #000;
+    border: 1px solid #000;
+}
+
+.checkout-heading{
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 900;
+    font-size: 2.1em;
+    color: #f1777e;
+}
+.fieldset-label{
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 900;
+    color: #f1777e;
+}
+
+.icon_checkout:hover,
+.cart_button_checkout:hover{
+    color: #c5cbe6 !important;
+}

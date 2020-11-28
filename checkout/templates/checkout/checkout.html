@@ -18,8 +18,9 @@
                 </div>
             </div>
             <div class="container">
-                <div class="py-5 text-center">
-                    <h2>Checkout form</h2>
+                <div class="py-5 ">
+                    <h2 class="checkout-heading">Checkout form</h2>
+            <hr class="mb-5">
                     
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
@@ -67,7 +68,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-6">
-                    <p class="lead">Please fill out the form below to complete your order.</p>
+                    <p class="form-instruction mb-3">Please fill out the form below to complete your order.</p>
                     <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                     {% csrf_token %}
                       <fieldset class="rounded px-2 mb-5">
@@ -107,18 +108,15 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_cart' %}" class="btn btn-outline-black rounded-0">
+						<a href="{% url 'view_cart' %}" button type="button" class="button cart_button_clear">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
 							<span class="font-weight-bold">Edit Cart</span>
 						</a>
-						<button id="submit-button" class="btn btn-black rounded-0">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
+						<a href="{% url 'checkout' %}" button type="button" class="button cart_button_checkout icon"><i class="fas fa-lock"></i>
+							<span class="font-weight-bold">  Complete Order</span>
+						</a>
 						<p class="small text-danger my-0">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
