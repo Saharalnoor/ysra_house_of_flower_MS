@@ -39,7 +39,7 @@
                                                         <div class="cart_item_text">{{ item.product.sku|upper }}</div>
                                                     </div>
                                                     <div class="cart_item_quantity cart_info_col">
-                                                        <form class="form update-form" method="POST" >
+                                                        <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                                                         {% csrf_token %}
                                                         <div class="cart_item_title">Quantity</div>
                                                         <div class="cart_item_text"><input name="quantity" type="number" min="1" max="999" class="form-control"
@@ -60,7 +60,7 @@
                                     <div class="order_total">
                                         <div class="order_total_content text-md-right">
                                             <div class="order_subtotal_title">Subtotal:</div>
-                                            <div class="order_subtotal_amount"> ${{ item.product.price | calc_subtotal:item.quantity }}
+                                            <div class="order_subtotal_amount"> ${{ total | floatformat:2 }}
                                         </div>
                                          <div class="order_total_content text-md-right">
                                             <div class="delivery_title">Delivery:</div>

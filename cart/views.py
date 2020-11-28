@@ -2,22 +2,13 @@ from django.shortcuts import render, redirect, \
     reverse, HttpResponse, get_object_or_404
 from products.models import Product
 from django.contrib import messages
-
-# Create your views here.
+from . import contexts
 
 
 def view_cart(request):
     """ A view that renders the cart contents page """
-    cart = request.session.get('cart', {})
-   
-    print("\n\n")
-    print(cart)
-    print("\n\n")
-    return
-    template = 'cart/cart.html'
-    context = {
-            'cart_items': cart
-        }
+    context = contexts.cart_contents(request)
+    template = "cart/cart.html"
 
     return render(request, template, context)
 
