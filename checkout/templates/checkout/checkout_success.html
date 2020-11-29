@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section class="success-container-fluid">
+        <div class="row">
+            <div class="col-12 my-5 text-center">
+                <h3 class="sub-title text-uppercase font-weight-bold mb-5">
+					Order Confirmation!
+				</h3>
+                <p>Thank You for order</p>
+
+            <div class="customer-details">
+                <p>{{ order.full_name }},<br>
+                    {{ order.street_address1 }},<br>
+                    {% if order.address_line_2 %}
+                    {{ order.street_address2 }},<br>
+                    {% endif %}
+                    {{ order.town_or_city }},<br>
+                    {% if order.county %}
+                    {{ order.county }},<br>
+                    {% endif %}
+                    {{ order.postcode }},<br>
+                    {{ order.country }}</p>
+            </div>
+            </div>
+        </div>
+
+    </section>
+        
+{% endblock %}

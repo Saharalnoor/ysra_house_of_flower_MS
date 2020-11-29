@@ -38,13 +38,13 @@
         </li>
         <li class="nav-item nav-item-header mr-5">
             <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
-                 href="">FAQs
+                 href="{% url 'faqs' %}">FAQs
             </a>
         </li>
 
         <li class="nav-item nav-item-header mr-5">
             <a class="nav-link nav-link-header font-weight-bold  {% if request.get_full_path == '/products/' %}active-nav-link{% endif %}" 
-                 href="">Contact Us
+                 href="{% url 'contact_us' %}">Contact Us
             </a>
         </li>
         <li class="list-inline-item dropdown">

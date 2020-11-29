@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+   <section class="container contact-container">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-6 mt-5 mb-5">
+            <div class="contact-form">
+              <h3 class="sub-title text-uppercase font-weight-bold text-center">
+                Inquiry
+              </h3>
+              <p class="text-center mb-5">
+                We are always finding ways to improve the quality of our
+                service. We encourage you to leave us with valuable feedback.
+                Thank you for your time.
+              </p>
+              <form action="action" method="GET" class="form-container">
+                <div class="form-row">
+                  <div class="col sub-title text-uppercase font-weight-bold">
+                    <label for="FName">First Name <span class="required-input">*</span></label>
+                    <input type="text" class="form-control" id="FName" required/>
+                  </div>
+                  <div class="col sub-title text-uppercase font-weight-bold">
+                    <label for="LName">Last Name <span class="required-input">*</span></label>
+                    <input type="text" class="form-control" id="LName" required/>
+                  </div>
+                </div>
+
+                <div class="form-group sub-title text-uppercase font-weight-bold mt-2">
+                  <label for="EmailAdd">Email <span class="required-input">*</span></label>
+                  <input type="text" class="form-control" id="EmailAdd" aria-describedby="emailAddress" required/>
+                  <small id="emailAddress" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group sub-title text-uppercase font-weight-bold">
+                  <label for="number">Contact Number <span class="required-input">*</span></label>
+                  <input type="tel" class="form-control" id="number" required/>
+                </div>
+                <div class="form-group sub-title text-uppercase font-weight-bold">
+                  <label for="msg">Message</label>
+                  <textarea class="form-control" id="msg" rows="4" required></textarea>
+                </div>
+                <button type="submit"
+                  class="btn btn-mdc btn--submit btn-outline-success">Submit
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 mt-5 mb-5">
+            <div class="contact-information">
+              <h4 class="sub-title text-uppercase font-weight-bold text-center">
+                Contact Us
+              </h4>
+              <p class="text-center"> Hanstavägen 55 F, 164 53 Kista <br/>
+                Stockholm, Sweden
+              </p>
+              <p class="text-center"> Telephone No.
+                <a class="tel-link font-color-inverse" href="tel:+46735396609" aria-label="Telephone Number"> +467 3539 6603</a><br/>
+                Email: ysraspa@business.com
+              </p>
+
+              <p class="text-center">Operation Hours <br/>
+                Monday to Sunday <br/>
+                10:00 - 21:00
+              </p>
+
+              <div class="loaction map text-center">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2030.8443266251722!2d17.94354511598287!3d59.40230968168441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9ef2ea2203df%3A0xd1e6ca0a48759ac!2sKista%20Galleria!5e0!3m2!1ssv!2sse!4v1586849461978!5m2!1ssv!2sse" width="290" height="300"  style="border:0;" allowfullscreen=""
+			     aria-hidden="false" tabindex="0"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Contact -->
+
+{% endblock %}
