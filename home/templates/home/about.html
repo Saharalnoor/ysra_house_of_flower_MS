@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+     <section class="about-container-fluid mt-5">
+        <div class="row">
+            <div class="col-12 my-5 text-center">
+                <h3 class="about-title text-uppercase font-weight-bold mb-5">
+					Welcome to Ysra House of Roses
+				</h3>
+                <p class="about-text">
+                    We are committed to offering only the finest and most beautiful floral arrangements and gifts, backed by service that is friendly, helpful and prompt. <br>
+                    professional staff are dedicated to making your experience a pleasant one because all of our customers are important to us. <br>
+                    We always go the extra mile to make your floral gift perfect.
+                </p>
+                <p class="about-text">
+                    Our florists have original, creative and fun ideas about how to make any gift occasion something special for both you and the recipient, <br> whoever they may be and for whatever purpose your gift is for.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+            <img id="logo" src="{% static 'img/yhr-logo.png' %}" alt="House of Roses" >
+            </div>
+        </div>
+    </section>
+{% endblock %}
