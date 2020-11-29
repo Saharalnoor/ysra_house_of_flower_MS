@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -17,5 +19,13 @@ def faqs(request):
 
 def contact_us(request):
     """A view to return the contact_us page"""
-
-    return render(request, 'home/contact_us.html')
+    if request.method == 'POST':
+        f = ContactForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.info(request, 'Your contactform has been submitted.\
+                I will respond to you as soon as possible!')
+            return redirect(reverse('contact'))
+    else:
+        f = ContactForm()
+    return render(request, 'home/contact_us.html', {'form': f})

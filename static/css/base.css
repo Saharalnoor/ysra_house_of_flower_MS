@@ -234,6 +234,18 @@ ul {
     opacity: 0.8
 }
 
+.btn-outline-success{
+    display: inline-block;
+    background: #FFFFFF;
+    border: solid 1px #b2b2b2;
+    padding-left: 35px;
+    padding-right: 35px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 26px;
+}
+
+
 .cart_section {
     width: 100%;
    
@@ -404,6 +416,17 @@ ul {
     font-weight: 600;
     color: #f1777e;
 
+}
+
+.sub-title{
+    font-size: 1,2rem;
+    font-weight: 600;
+    color: #f1777e;
+}
+
+.form-control {
+    color: #000;
+    border-radius: 0 !important
 }
 
 
