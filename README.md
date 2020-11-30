@@ -214,9 +214,14 @@ I know to myself that this project will not meet the passing grade as a lot of f
 - The Logo was created from [Free Logo Design](https://free-logo-design.net/food-drinks/free-coffee-logo-design)
 
 ### Video Guide
-- (Inspired by) Boutique Ado is my guide doing this project, I follow step by step.
-- Most of the Codes was taken from Boutique Ado
+- Boutique Ado is my guide doing this project, I follow step by step.
+- Most of the Codes was taken from Boutique Ado and some from art of tea
 - The Navbar, Checkout form was inspired by Boutique Ado
+
+### Inspiration
+- Botique Ado
+- Art of tea 
+- thehouseofMouse
 
 ## Acknowledgement
 
