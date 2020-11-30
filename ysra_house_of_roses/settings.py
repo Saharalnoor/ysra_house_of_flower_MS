@@ -26,7 +26,7 @@ SECRET_KEY = '_*-#qr35akymw9e$iu@wc6u*982w+mzgyd0+4*!4%*p3_6*0#1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['saharalnoor-ysra-house-of-roses', 'local-host']
+ALLOWED_HOSTS = ['ysra-house-of-roses.herokuapp.com', 'local-host']
 
 
 # Application definition
