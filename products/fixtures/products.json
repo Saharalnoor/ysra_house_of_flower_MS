@@ -8,7 +8,6 @@
          "description":"24 pieces fresh White Ecuadorian Rose in a black Bouquet ",
          "price":150,
          "category":1,
-         "image_url":"",
          "image":"bouquet-white-ecuadorian.jpg"
       }
    },
@@ -21,7 +20,6 @@
          "description":"9 pieces Premium Preserve Ecuadorian rose in Mirror Box",
          "price":110,
          "category":4,
-         "image_url":"",
          "image":"lovely-yellow-mirror-cube.jpg"
       }
    },
@@ -34,7 +32,6 @@
          "description":"12 pieces Red Ecuadorian Roses in Black Cylinder",
          "price":80,
          "category":2,
-         "image_url":"",
          "image":"classic-cylinder.jpg"
       }
    },
@@ -47,7 +44,6 @@
          "description":"14 pieces Pink Ecuadorian Roses in white heart shape ",
          "price":90,
          "category":3,
-         "image_url":"",
          "image":"premium-sweetheart.jpg"
       }
    },
@@ -60,7 +56,6 @@
          "description":"8 pieces Pink Ecuadorian Roses with Lisanthius in a cream Bouquet",
          "price":90,
          "category":1,
-         "image_url":"",
          "image":"bouquet-amelie.jpg"
       }
    },
@@ -73,7 +68,6 @@
          "description":"14 pieces Red and Pink Ecuadorian Roses in white heart shape",
          "price":90,
          "category":4,
-         "image_url":"",
          "image":"classic-sweetheart.jpg"
       }
    },
@@ -86,7 +80,6 @@
          "description":"18 pieces Ecuadorian Roses Pink Color in a Pastel Pink Bouquet",
          "price":155,
          "category":1,
-         "image_url":"",
          "image":"bouquet-monochromatic-pink.jpg"
       }
    },
@@ -99,7 +92,6 @@
          "description":"12 pieces Ecuadorian White Roses in Pink Pastel cylinder",
          "price":85,
          "category":2,
-         "image_url":"",
          "image":"pastel-pink-white-ecuadorian.jpg"
       }
    },
@@ -112,7 +104,6 @@
          "description":"50 pieces Lovely Black Ecuadorian Rose in a Grey Bouquet",
          "price":280,
          "category":1,
-         "image_url":"",
          "image":"bouquet-black-ecuadorian.jpg"
       }
    },
@@ -125,7 +116,6 @@
          "description":"9 pieces Premium Preserve Ecuadorian rose in Mirror Box",
          "price":110,
          "category":4,
-         "image_url":"",
          "image":"mirror-assorted.jpg"
       }
    },
@@ -138,7 +128,6 @@
          "description":"12 pieces Black Ecuadorian Roses in White Cylinder ",
          "price":80,
          "category":2,
-         "image_url":"",
          "image":"make-it-chick cylinder.jpg"
       }
    },
@@ -151,7 +140,6 @@
          "description":"9 pieces preserved red roses in mirror box",
          "price":110,
          "category":4,
-         "image_url":"",
          "image":"classic-mirror-cube.jpg"
       }
    },
@@ -164,7 +152,6 @@
          "description":"12 pieces Pink Ecuadorian Roses in Black Cylinder",
          "price":80,
          "category":2,
-         "image_url":"",
          "image":"cylinder-dainty-pink.jpg"
       }
    },
@@ -177,7 +164,6 @@
          "description":"12 pieces Ecuadorian Roses in black bouquet",
          "price":180,
          "category":1,
-         "image_url":"",
          "image":"bouquet-strawberry-cream-swirls.jpg"
       }
    },
@@ -190,7 +176,6 @@
          "description":"12 pieces of White Ecuadorian Roses in a White Cylinder",
          "price":80,
          "category":2,
-         "image_url":"",
          "image":"cylinder-white-white.jpg"
       }
    },
@@ -203,7 +188,6 @@
          "description":"12 pieces of Yellow Ecuadorian Roses in a Black Cylinder",
          "price":80,
          "category":2,
-         "image_url":"",
          "image":"lovely-yellow-cylinder.jpg"
       }
    },
@@ -216,7 +200,6 @@
          "description":"Primavera bouquet is a mix of varying size of 18 eatern roses and 18 local rosesto give the arrangement a cascading illusion",
          "price":200,
          "category":1,
-         "image_url":"",
          "image":"bouquet-primavera.jpg"
       }
    },
@@ -229,7 +212,6 @@
          "description":"14 pieces of peach ecuadorian roses in a heart shape container",
          "price":90,
          "category":3,
-         "image_url":"",
          "image":"peachy-sweetheart.jpg"
       }
    }
