@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import dj_database_url
+from os import path
+if path.exists("env.py"):
+    import env
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,12 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = True
 
-ALLOWED_HOSTS = ['ysra-house-of-roses.herokuapp.com', 'local-host']
+ALLOWED_HOSTS = ['ysra-house-of-roses.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -179,5 +183,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 90
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'usd'
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY',)
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY',)
+STRIPE_SECRET_KEY = os.getenv('3s7lie9oqlux(a3b*-vvhtxgm1d)n%ahn+-4%s7i_@v^#xf+*w')
+STRIPE_PUBLIC_KEY = os.getenv('pk_test_51Hsd8OK4QpIUZwG9napIA3Ya6WVBXSlmaOstBTAhTsoCpDgDXtMSO9br3dvOwfC89eREdWqkVfNp5ibX9LqJSXCD00uDEeFPB1',)
