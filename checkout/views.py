@@ -72,14 +72,11 @@ def checkout(request):
                          wasn't found in our database. "
                         "Please call us for assistance!")
                     )
-                order.delete()
-                return redirect(reverse('view_cart'))
-            if request.POST['save_info'] == "true":
-                request.session['save_info'] = True
-            else:
-                request.session['save_info'] = False
-            return redirect(reverse('checkout_success',
-                            args=[order.order_number]))
+                    order.delete()
+                    return redirect(reverse('view_cart'))
+
+                request.session['save_info'] = 'save-info' in request.POST
+                return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please check again your information.')
