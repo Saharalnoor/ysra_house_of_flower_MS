@@ -13,7 +13,10 @@
 			<h3 class="sub-title text-uppercase font-weight-bold mb-5">
 					Order Confirmation!
 				</h3>
-			<p>Thank you for your order!</p>
+            <h4>Thank you for your order!</h4>
+            <p>Your order information is below. A confirmation email will be sent to 
+                        <strong>{{ order.email }}</strong>.
+                    </p>
 			<div class="customer-details">
 				<h4 class="sub-title text-uppercase font-weight-bold mt-5">Order Info:</h4>
 				<p>{{ order.full_name }},
