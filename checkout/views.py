@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, \
     reverse, get_object_or_404, HttpResponse
+from django.views.decorators.http import require_POST
 from cart.contexts import cart_contents
 from django.conf import settings
 from django.contrib import messages
@@ -12,13 +13,16 @@ from products.models import Product
 import stripe
 import json
 
-
+@require_POST
 def cache_checkout_data(request):
+    """
+    A view to store user's input for the checkbox "save-info" field
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
-            'bag': json.dumps(request.session.get('bag', {})),
+            'cart': json.dumps(request.session.get('cart', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
@@ -30,6 +34,9 @@ def cache_checkout_data(request):
 
 
 def checkout(request):
+    """
+    A view that handles checkout process
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     cart = request.session.get('cart', {})
