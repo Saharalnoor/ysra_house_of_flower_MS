@@ -99,6 +99,27 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.btn-colour-1 {
+    color: #fff;
+    background-color: #f1777e;
+    letter-spacing: 0.05em;
+    border-radius: 2;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+.btn-colour-1:hover,
+.btn-colour-1:active,
+.btn-colour-1:focus {
+    background-color: #f1777e;
+    color: rgb(217, 223, 218) !important;
+}
+
 .utility-nav {
   background: #f1777e;
   padding: 0.5rem 1rem;
