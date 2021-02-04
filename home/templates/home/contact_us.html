@@ -15,35 +15,15 @@
                 service. We encourage you to leave us with valuable feedback.
                 Thank you for your time.
               </p>
-              <form action="action" method="GET" class="form-container">
-                <div class="form-row">
-                  <div class="col sub-title text-uppercase font-weight-bold">
-                    <label for="FName">First Name <span class="required-input">*</span></label>
-                    <input type="text" class="form-control" id="FName" required/>
-                  </div>
-                  <div class="col sub-title text-uppercase font-weight-bold">
-                    <label for="LName">Last Name <span class="required-input">*</span></label>
-                    <input type="text" class="form-control" id="LName" required/>
-                  </div>
-                </div>
-
-                <div class="form-group sub-title text-uppercase font-weight-bold mt-2">
-                  <label for="EmailAdd">Email <span class="required-input">*</span></label>
-                  <input type="text" class="form-control" id="EmailAdd" aria-describedby="emailAddress" required/>
-                  <small id="emailAddress" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group sub-title text-uppercase font-weight-bold">
-                  <label for="number">Contact Number <span class="required-input">*</span></label>
-                  <input type="tel" class="form-control" id="number" required/>
-                </div>
-                <div class="form-group sub-title text-uppercase font-weight-bold">
-                  <label for="msg">Message</label>
-                  <textarea class="form-control" id="msg" rows="4" required></textarea>
-                </div>
-                <button type="submit"
-                  class="btn btn--submit btn-outline-success">Submit
-                </button>
-              </form>
+              <form method="POST" action="{% url 'contact_us' %}">
+                    {% csrf_token %}
+                    {{ contact_form|crispy }}
+                    <div class="row form-group">
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-colour-1" aria-label="Contact Form Submit Button">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
           </div>
           <div class="col-md-6 mt-5 mb-5">
