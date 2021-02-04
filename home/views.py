@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
+from django.core.mail import send_mail, BadHeaderError
+from django.conf import settings
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import ContactForm
-
-# Create your views here.
 
 
 def index(request):
@@ -24,14 +24,35 @@ def faqs(request):
 
 
 def contact_us(request):
-    """A view to return the contact_us page"""
+    """
+    Send an email to the admin
+    when site visitors send message via contact form
+    """
     if request.method == 'POST':
-        f = ContactForm(request.POST)
-        if f.is_valid():
-            f.save()
-            messages.info(request, 'Your contactform has been submitted.\
-                I will respond to you as soon as possible!')
-            return redirect(reverse('contact'))
-    else:
-        f = ContactForm()
-    return render(request, 'home/contact_us.html', {'form': f})
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            name = contact_form.cleaned_data['name']
+            email = contact_form.cleaned_data['email']
+            message = contact_form.cleaned_data['message']
+            try:
+                send_mail(
+                    f"You've got a message from {name} ({email}) on contact form.",
+                    message,
+                    email,
+                    [settings.DEFAULT_FROM_EMAIL],
+                )
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+            return redirect('contact_thankyou')
+    context = {
+        'contact_form': ContactForm 
+    }
+    return render(request, 'home/contact_us.html', context)
+
+
+def contact_thankyou(request):
+    """
+    A view to return contact_thankyou page in order \
+        to inform user that the message was succseddfully sent
+    """
+    return render(request, 'home/contact_thankyou.html')
