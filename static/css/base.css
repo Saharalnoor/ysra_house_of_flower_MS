@@ -87,7 +87,7 @@ body {
 
 }
 
-.Thankyou-heading{
+.faqs-header, .Thankyou-heading{
     font-size: 2.7em;
     font-family:'Roboto', sans-serif;
     text-transform: uppercase;
