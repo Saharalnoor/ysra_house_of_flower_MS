@@ -24,6 +24,11 @@
     vertical-align: top
 }
 
+.profile_button:hover {
+    border-color: #f1777e;
+    color: #FFFFFF;
+}
+
 #profile-update-form input, #id_default_country {
    color: #000;
     border: 1px solid #000;
