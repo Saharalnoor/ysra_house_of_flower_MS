@@ -44,11 +44,28 @@
                                         </a>
                                     </td>
                                     <td>{{ order.date }}</td>
+                                   <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.lineitems.all %}
+                                                <li class="small">
+                                                    {{ item.product.name }} x {{ item.quantity }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
                                     <td>${{ order.grand_total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
+                    <div class="mt-4 float-right">
+					<a href="{% url 'home' %}" button class="button profile_button float-right mb-5">
+						<span class="icon">
+							<i class="fas fa-angle-left"></i>
+						</span>
+						<span>Back to Home</span>
+					</a>
+				</div>
                 </div>
             </div>
         </div>
