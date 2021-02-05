@@ -1,0 +1,1 @@
+<Ysra House of Roses> Confirmation of your Order: {{ order.order_number }}
