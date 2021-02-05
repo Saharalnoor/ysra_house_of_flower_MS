@@ -28,7 +28,29 @@
 					<br>{{ order.country }}</p>
 			</div>
 		</div>
-	</div>
+    </div>
+    <div class="row">
+			<div class="col-12 text-center">
+                {% if from_profile %}
+                    <div class="text-center">
+                        <a href="{% url 'profile' %}" button type="button" class="button checkout_sucess_button_clear mb-3">
+                            <span class="icon mr-2">
+                                <i class="fas fa-angle-left"></i>
+                            </span>
+                            <span class="text-uppercase">Back to Profile</span>
+                        </a>
+                    </div>
+                {% endif %}
+				<div class="mt-2">
+					<a href="{% url 'products' %}" button type="button" class="button checkout_button_success mb-3">
+						<span class="icon">
+							<i class="fas fa-arrow-left"></i>
+						</span>
+						<span>Keep Shopping</span>
+					</a>
+				</div>
+			</div>
+        </div>
 </section>
         
 {% endblock %}
