@@ -400,6 +400,43 @@ ul {
     vertical-align: top
 }
 
+.checkout_sucess_button_clear {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 48px;
+    color: rgba(0, 0, 0, 0.5);
+    background: #FFFFFF;
+    border: solid 1px #b2b2b2;
+    padding-left: 15px;
+    padding-right: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkout_sucess_button_clear:hover {
+    border-color: #f1777e;
+    color: #f1777e;
+}
+
+.checkout_button_success{
+    border: none;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 48px;
+    color: #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkout_button_success:hover,
+.cart_button_checkout:hover {
+    border-color: #f1777e;
+    color: #FFFFFF;
+}
+
 .order_total {
     width: 100%;
     height: 200px;
