@@ -52,25 +52,72 @@ This website has only 1 font style which is Roboto.
 
 ---
 
-### Existing Features
+## Existing Features
 
-This website is a multiple website which consit of 
-- categories tab which has 
-  - 4 kind of categories pages
-- Product page
-- Product details page
-- About page
-- Faqs page
-- Contact Page
-- Cart page
-- Checkout Page
-- Order Confirmation Page
+This website is a multiple website which compose of 5 Applications.
 
-* This Website has an Search Bar where the user can able to search using keywords.
-* This website has button to view all products at hero image.
-* This website has contact form that allow the user to send inquiries.
-* This website has quantity selector.
+### Landing Page
+    
+- Landing page is design as the home of the site which has hero image that has button to view all products.       
 
+![Landing Page](readMeDocs/features/landing-page.png)
+
+### About Page
+- The page provides a user information about the main focus of the website, its purposes, ideas and principles.
+
+![About Page](readMeDocs/features/about_page.png)
+
+### FAQs
+- Faqs provides questions that user will be possible ask and where they can find the answer.
+
+![Faqs](readMeDocs/features/faqs.png)
+
+### Contact Us
+- Consist of two sections
+    - Contact form which will allow users to send their message to the company
+    - Contact details sections provides company address, phone number, email and opening hours along with the maps showing the loacation of the company.
+
+![Conatact](readMeDocs/features/contact_page.png)
+
+### Product Page
+- Display the products with the product images.
+
+![product](readMeDocs/features/product_page.png)
+
+
+### Product Details
+- Display the product images and the details of the product.
+- The item quantity can be assigned filling the quantity form.
+- Clicking "Add to cart" button will put the product on the cart.
+- Clicking "Keep Shopping" will redirect you to product page.
+
+![Product-details](readMeDocs/features/product_details.png)
+
+
+### Cart Page 
+- Displays the product that the user selected and it shows the order summary suchs as price, SKU, and quantity.
+- User can be able to update the quantity or remove the certain product in the cart.
+- Toast messages will be displayed when a user updates/removes items in the cart.
+
+![Cart](readMeDocs/features/cart-page.png)
+
+### Checkout Page 
+- Checkout page compose of 2 section
+    - Checkout form section has boxes were the customer need to fill in their details.
+    - If a user already has a profile with the shipping information saved, the form will be pre-populated with this information.
+    - The save info checkbox allows the form information to be saved to the user's profile for the logged in users.
+    - Order Sumarry will be display in the other section of the page.
+
+![Checkout](readMeDocs/features/checkout_page.png)
+
+
+### My Account
+- Has 2 option which are:
+    - Register / signup page- were the user will be able to make their own account and be able to save their details for fast transaction on the next order.
+    - Log-in were the user that has registered will be able to log-in in their own account
+    - My profile has to section which aare the form where the user details are and their order history.
+
+![My Acct](readMeDocs/features/my_acct.png)
 ---
 
 ### Features Left to Implement
@@ -97,6 +144,55 @@ These features are great to be added for a more complete online shop service whi
 **PostgreSQL** was used on deployment stage, which is provided as add-on by Heroku application.
 
 - User model is provided as a default by [Django's authentication system](https://docs.djangoproject.com/en/3.1/ref/contrib/auth/).
+
+## Data Modelling
+### Profile App
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ User | user | OneToOneField 'User' |  on_delete=models.CASCADE
+ Email | profile_email | CharField | max_length=254, null=True, blank=True
+ Phone number | profile_phone_number | CharField | max_length=20, null=True, blank=True
+ Street Address Line1 | profile_street_address_line1 | CharField | max_length=80, null=True, blank=True
+ Strret Address Line2 | profile_street_address_line2 | CharField | max_length=80, null=True, blank=True
+ Town/City | profile_town_or_city | CharField | max_length=40, null=True, blank=True
+ County | profile_county | CharField | max_length=80, null=True, blank=True
+ Postcode | profile_postcode | CharField | max_length=20, null=True, blank=True
+ Country | profile_country | CountryField | blank_label='Country', null=True, blank=True
+
+
+### Products App
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+ Category | category | ForeignKey 'Category' | null=True, blank=True, on_delete=models.SET_NULL
+ Name | name | CharField | max_length=254 
+ Description | description | TextField | max_length=800 
+ Price | price | DecimalField |max_digits=6, decimal_places=2
+ Image | image| ImageField | null=True, blank=True
+ Sku | sku | CharField | max_length=254, null=True, blank=True
+
+ 
+### Checkout App
+
+| **Name** | **Database Key** | **Field Type** | **Validation** |
+--- | --- | --- | --- 
+Order Number | order_number | CharField | max_length=32, null=False, editable=False
+User Profile | profile | ForeignKey 'Profile' | on_delete=models.SET_NULL, null=True, blank=True, related_name='orders'
+Full Name | full_name | CharField | max_length=70, null=False, blank=False
+Email | email | EmailField | max_length=254, null=False, blank=False
+Phone number | phone_number | CharField | max_length=20, null=False, blank=False
+Street Address Line1 | street_address_line1 | CharField | max_length=60, null=False, blank=False
+Street Address Line2 | street_address_line2 | CharField | max_length=60, null=False, blank=False
+Town/City | town_or_city | CharField | max_length=50, null=False, blank=False
+County | county | CharField | max_length=50, null=True, blank=True
+Postcode | postcode | CharField | max_length=20, null=True, blank=True
+Country | country | CountryField | blank_label='Country*', null=False, blank=False
+Date | date | DateTimeField | auto_now_add=True
+Delivery Cost | delivery_cost | DecimalField | max_digits=6, decimal_places=2, null=False, default=0
+Order Total | order_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Grand Total | grand_total | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+Original Cart | original_cart | TextField | null=False, blank=False, default=''
+Stripe Pid | stripe_pid | CharField | max_length=254, null=False, blank=False, default=''
+
 
 ---
 
@@ -218,13 +314,16 @@ Manual testing was conducted with each feature and were conducted on the deploye
 
 - **Verdict**: Test passed
     
----
+** Need to fix
+Due to time constraints, the media query are not fix.
+
 ### Browerser Compatibility
 - Firefox: Works as intended.
 - Chrome: Works as intended.
 - Edge: Works as intended.
 - Safari: Works as intended.
 
+----
 
 ### DEPLOYMENT
 Running Code Locally
