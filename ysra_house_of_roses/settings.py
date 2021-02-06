@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['ysra-house-of-roses.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['localhost', 'ysra-house-of-roses.herokuapp.com']
 
 
 # Application definition
